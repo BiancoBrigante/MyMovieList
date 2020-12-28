@@ -1,0 +1,88 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    width: 100%;
+    padding: 20px;
+    background-image: url(header.jpg);
+    background-size: contain, repeat;
+    border-bottom: solid 4px black;
+    color: white;
+    font-size: 52px;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 0 9px 9px black;
+}
+
+.container {
+    position: relative;
+    height: 870px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.leftSideBar {
+    padding: 15px;
+    width: 200px;
+    margin: 0;
+    color: black;
+    text-align: center;
+    border-right: 3px solid black;
+    display: inline-block;
+    flex: 1;
+}
+
+.content {
+    display: inline-block;
+    background-image: url(background.jpg);
+    padding: 20px;
+    flex: 4;
+}
+
+.addFormTitle {
+    padding: 15px 15px 0 15px;
+    border-bottom: 4px solid black;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.filmListTitle {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px 5px;
+    width: content;
+    background-color: white;
+    opacity: 0.9;
+}
+
+.listItem {
+    text-align: left;
+    padding: 10px;
+    margin: 1%;
+    border: 2px solid black;
+    border-radius: 4%;
+    width: min-content;
+    background: lightcyan;
+    opacity: 0.97;
+    list-style-type: none;
+}
+
+.filmList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.listItem:hover .delete {
+    content: '';
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: url(trash.png) center center/cover no-repeat;
+}

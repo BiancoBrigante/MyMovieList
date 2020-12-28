@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя кинотека</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1 class="header">Моя кинотека</h1>
+    <div class="container">
+        <div class="leftSideBar">
+            <form class="addForm">
+                <div class="addFormTitle">Добавить фильм</div>
+                <span><b>Название фильма:</b></span><br>
+                <input class="filmTitle" type="text"><br>
+                <span><b>Год выпуска:</b></span><br>
+                <input class="filmYear" type="nubmer" min='1800' max='2021'><br>
+                <span><b>Режиссёр:</b></span><br>
+                <input class="filmProducer" type="text"><br>
+                <span><b>Продолжительность:</b></span><br>
+                <input class="filmTime" type="nubmer"><br>
+                <span><b>Ваша оценка:</b></span><br>
+                <input class="filmRating" type="range" min='1' max='10'><br>
+                <button class="addFilm">Опубликовать</button>
+            </form>
+        </div>
+        <div class="content">
+            <div class='filmListTitle'>Добавленные фильмы
+                <ul class="filmList">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
