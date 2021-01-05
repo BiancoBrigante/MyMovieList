@@ -11,29 +11,28 @@
 <body>
     <h1 class="header">Моя кинотека</h1>
     <div class="container">
-        <div class="leftSideBar">
-            <form class="addForm">
-                <div class="addFormTitle">Добавить фильм</div>
-                <span><b>Название фильма:</b></span><br>
-                <input class="filmTitle" type="text"><br>
-                <span><b>Год выпуска:</b></span><br>
-                <input class="filmYear" type="nubmer" min='1800' max='2021'><br>
-                <span><b>Режиссёр:</b></span><br>
-                <input class="filmProducer" type="text"><br>
-                <span><b>Продолжительность:</b></span><br>
-                <input class="filmTime" type="nubmer"><br>
-                <span><b>Ваша оценка:</b></span><br>
-                <input class="filmRating" type="range" min='1' max='10'><br>
-                <button class="publish">Опубликовать</button>
-            </form>
-        </div>
         <div class="content">
             <div class='filmListTitle'>
                 <h3 class="listTitle"><strong>ДОБАВЛЕННЫЕ ФИЛЬМЫ</strong></h3>
                 <ul class="filmList">
                 </ul>
-                <button class="addFilmBtn">+</button>
+                <button data-modal class="addFilmBtn">+</button>
             </div>
+        </div>
+    </div>
+    <div class="addFilmModal">
+        <div class="modalWindow">
+            <form action="#" class="addForm">
+                <div data-close class="modalClose">×</div>
+                <div class="modalTitle">Добавьте новый фильм</div>
+                <input required placeholder="Название фильма" class="filmTitle modalInput" type="text">
+                <input placeholder="Год выхода" class="filmYear modalInput" type="nubmer" min='1800' max='2021'>
+                <input placeholder="Режиссёр" class="filmProducer modalInput" type="text">
+                <input placeholder="Продолжительность" class="filmTime modalInput" type="nubmer">
+                <div class="modalRating">Ваша оценка:</div>
+                <input class="filmRating modalInputRating" type="range" min='1' max='10'>
+                <button class="publish">Опубликовать</button>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>

@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     addForm.reset(); //сбрасываем форму ввода
+    defaultRating(); //ставим дефолтный рейтинг
   });
 
 
@@ -71,4 +72,69 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+
+
+  //работаем с модальным окном
+  const modalTrigger = document.querySelector('[data-modal]'), //получаем модальный аттрибут
+    modal = document.querySelector('.addFilmModal'),
+    modalCloseBtn = document.querySelector('[data-close]');
+
+  function openModal() { //показываем или убираем модальное окно
+    modal.classList.toggle('show'); //тогглим класс
+    document.body.style.overflow = 'hidden'; //убираем прокрутку страницы
+  }
+
+  modalTrigger.addEventListener('click', openModal); //по клику запускаем функцию
+
+  //делаем функцию для закрытия модального окна
+  function closeModal() {
+    modal.classList.toggle('show'); //снова тогглим
+    document.body.style.overflow = ''; //добавляем прокрутку страницы
+  }
+
+  //по клику убираем окно
+  modalCloseBtn.addEventListener('click', closeModal);
+
+  //закрываем модальное окно по клику вне этого окна
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) { //если клик совпадает с модальным окном, то
+      closeModal();
+    }
+  });
+
+  //закрываем окно по нажатии ESC
+  //событием keydown отслеживаем нажатые клавиши
+  document.addEventListener('keydown', (e) => {
+    //если нажали Esc и окно открыто, то...
+    if (e.code === "Escape" && modal.classList.contains('show')) {
+      closeModal();
+    }
+  });
+
+
+
+  //делаем ползунок рейтинга
+  const ratingSlider = addForm.querySelector(".modalInputRating"),
+    ratingOutput = addForm.querySelector(".modalRating");
+
+  //дефолтный рейтинг
+  function defaultRating() {
+    ratingOutput.innerHTML = parent.innerHTML = `
+  <div class="modalRating">
+  Ваша оценка: ${ratingSlider.value}
+  </div>
+  `;
+  }
+
+  //обновление слайдера
+  ratingSlider.oninput = function () {
+    ratingOutput.innerHTML = `
+    <div class="modalRating">
+    Ваша оценка: ${this.value}
+    </div>
+    `;
+  };
+
+  defaultRating(); //ставим дефолтный рейтинг
 });
