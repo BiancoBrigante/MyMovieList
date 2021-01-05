@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addForm.reset(); //сбрасываем форму ввода
     defaultRating(); //ставим дефолтный рейтинг
+    openModal(); //закрываем форму
   });
 
 
