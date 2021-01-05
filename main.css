@@ -44,12 +44,6 @@
     width: 100%;
 }
 
-@media only screen and (max-width: 950px) {
-    .container {
-        position: relative;
-    }
-}
-
 .addFormTitle {
     padding: 15px 15px 0 15px;
     border-bottom: 4px solid black;
@@ -71,7 +65,7 @@
 .listItem {
     text-align: left;
     padding: 10px;
-    margin: 0 10px 0 10px;
+    margin: 10px;
     border: 2px solid black;
     border-radius: 4%;
     width: min-content;
@@ -84,6 +78,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .addFilmModal {
@@ -126,6 +121,7 @@
     text-align: center;
     font-size: 22px;
     text-transform: uppercase;
+    margin: 5px;
 }
 
 .modalInput {
@@ -153,15 +149,10 @@
     -webkit-appearance: none;
     display: block;
     margin: 10px auto 10px auto;
-    width: 20%;
-    height: 15px;
-    border-radius: 5px;
+    width: 280px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
-    background: '9';
-    -webkit-transition: .2s;
-    transition: opacity .2s;
 }
 
 .publish {
