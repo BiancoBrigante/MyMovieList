@@ -51,14 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     films.forEach((film, i) => { //выводим фильм как элемент списка
       parent.innerHTML += `
-        <li class="listItem">
-        ${i + 1}. ${film.title}<br>
-        Год: ${film.year}<br>
-        Режиссёр: ${film.producer}<br>
-        Продолжительность: ${film.time}<br>
-        Рейтинг: ${film.rating} 
-        <div class="delete"></div>
-        </li>
+        <div class="listItem">
+        <details>
+        <summary>
+        ${i + 1}. ${film.title}
+        </summary>
+        <div class = "filmInfo">
+        Год: ${film.year}<br> 
+        Режиссёр: ${film.producer}<br> 
+        Продолжительность: ${film.time}<br> 
+        Рейтинг: ${film.rating}
+        <div class="delete">
+        </div>
+        </div>
+        </details></div>
         `;
     });
 

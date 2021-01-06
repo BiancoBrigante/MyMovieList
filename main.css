@@ -20,16 +20,17 @@
 }
 
 .addFilmBtn {
-    position: relative;
-    left: 49%;
-    top: 10px;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
     font-size: 36px;
     width: 50px;
     height: 50px;
     border: 3px solid black;
     border-radius: 100%;
-    background: linear-gradient(to top, #70c2c2, #eee38f);
+    background: linear-gradient(to top, #e7f188, #e7f713);
     animation: infinite;
+    cursor: pointer;
 }
 
 .container {
@@ -64,18 +65,30 @@
 
 .listItem {
     text-align: left;
-    padding: 10px;
-    margin: 10px;
+    padding: 2px;
+    margin: 5px 0 0 -5px;
     border: 2px solid black;
     border-radius: 4%;
-    width: min-content;
+    width: 102%;
     background: rgb(198, 221, 221);
     list-style-type: none;
+    box-shadow: 0 1px 15px black;
+    cursor: pointer;
+}
+
+.filmInfo {
+    background: mediumaquamarine;
+    border: 2px solid black;
+    cursor: default;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
 }
 
 .filmList {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 15px;
@@ -90,7 +103,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, .5)
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .modalWindow {
@@ -180,6 +193,7 @@
     width: 20px;
     height: 20px;
     background: url(trash.png) center center/cover no-repeat;
+    cursor: pointer;
 }
 
 .show {
